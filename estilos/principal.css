@@ -69,10 +69,6 @@ menu li{
     padding: 5px;
 }
 
-div#iframe {
-
-}
-
 iframe {
     display: none;
 }
@@ -93,7 +89,7 @@ section a {
     color: white;
     font-family: 'Passion One', cursive;
     font-size: 1.5em;
-    width: 400px;
+    width: 320px;
     padding: 20px;
     margin: 10px 0px;
     border-radius: 8px;
