@@ -43,6 +43,7 @@ div#menu {
     background-color: black;
     color: white;
     text-align: center;
+    cursor: pointer;
 }
 
 menu#itens {
@@ -67,6 +68,10 @@ menu a {
 menu li{
     list-style-type: none;
     padding: 5px;
+}
+
+menu li:hover {
+    background-color: rgb(46, 46, 46);
 }
 
 section {
