@@ -41,3 +41,41 @@ h1 {
 h2 {
     font-size: 1.1em;
 }
+
+span.add {
+    display: block;
+    background-color: black; 
+    text-align: center; 
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input {
+    display: inline-block;
+    width: 71%;
+    height: 20px;
+    background-color: beige;
+    border-radius: 5px;
+    margin: 5px 0;
+    border: 1px solid black;
+    outline: none;
+}
+
+button {
+    display: inline-block;
+    width: 25%;
+    height: 25px;
+    background-color: beige;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+
+p.p-comentario {
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+    font-weight: bold;
+}
+
