@@ -8,7 +8,7 @@
 </div>
 <p class="p-comentario">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, mollitia quod fuga reiciendis distinctio neque officiis asperiores sit explicabo tenetur adipisci ipsam. Dolores ab maxime tenetur cumque aliquid consequuntur veritatis.</p>
 */
-
+/*
 let banco = [
     {'anotacao': 'teste'},{'anotacao': 'teste1'},{'anotacao': 'teste2'}
 ]
@@ -45,6 +45,60 @@ const atualizarTela = () => {
     limparAnotacao()
     banco.forEach(anot => criarAnotacao(anot.anotacao))
 }
+*/
+document.querySelector('section').addEventListener('click', (e) => {
+
+    const targetEl = e.target
+    const parentEl = targetEl.closest('p')
+    const divEl = targetEl.closest('div')
+
+
+    if(parentEl.style.color == 'blue') {
+        parentEl.style.color = 'black'
+    } else if (targetEl.classList.contains('estrofe')) {
+        divEl.classList.add('clicou')
+        parentEl.style.color = 'blue'   
+    }
+
+
+    if(divEl.classList.contains('clicou')) {
+        //if(item.classList.contains('itens')) {
+        //    item.remove()
+        //}
+        //const divEstrofe = document.querySelector('div.estrofe')
+        //divEstrofe.removeChild(div)
+        const item = document.createElement('div')
+        item.classList.add('itens')
+        item.innerHTML = `
+        <span class="material-symbols-outlined add">
+        library_add
+        </span>
+        <input type="text" name="comentario" id="comentario">
+        <button class="btn" onclick="teste()">Enviar</button>
+    `
+    document.querySelector('.clicou').appendChild(item)
+    const buttonEnviar = document.querySelector('.btn')
+    buttonEnviar.classList.add('enviou')
+    divEl.classList.toggle('clicou')
+    }
+
+})
+
+function teste() {
+    document.addEventListener('click', (e) => {
+    const targetBt = e.target
+    const parentEl = targetBt.closest('button')
+/*
+    if (targetBt.classList.contains('enviou')) {
+        alert('teste')
+    }*/
+    comentario = document.querySelector('.comentario')
+    const anotacao = document.createElement('p')
+    anotacao.classList.add('p-comentario')
+    anotacao.innerHTML += `${comentario}`
+    document.querySelector('.estrofe').appendChild(anotacao)
+})}
+
 
 
 
