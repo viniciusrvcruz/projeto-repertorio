@@ -46,6 +46,7 @@ const atualizarTela = () => {
     banco.forEach(anot => criarAnotacao(anot.anotacao))
 }
 */
+
 document.querySelector('section').addEventListener('click', (e) => {
 
     const targetEl = e.target
@@ -62,11 +63,7 @@ document.querySelector('section').addEventListener('click', (e) => {
 
 
     if(divEl.classList.contains('clicou')) {
-        //if(item.classList.contains('itens')) {
-        //    item.remove()
-        //}
-        //const divEstrofe = document.querySelector('div.estrofe')
-        //divEstrofe.removeChild(div)
+
         const item = document.createElement('div')
         item.classList.add('itens')
         item.innerHTML = `
@@ -74,7 +71,7 @@ document.querySelector('section').addEventListener('click', (e) => {
         library_add
         </span>
         <input type="text" name="comentario" id="comentario">
-        <button class="btn" onclick="teste()">Enviar</button>
+        <button class="btn">Enviar</button>
     `
     document.querySelector('.clicou').appendChild(item)
     const buttonEnviar = document.querySelector('.btn')
@@ -82,22 +79,24 @@ document.querySelector('section').addEventListener('click', (e) => {
     divEl.classList.toggle('clicou')
     }
 
+    document.querySelector('.enviou').addEventListener('click', (e) => {
+        const targetBt = e.target
+        const parentEl = targetBt.closest('button')
+        const divES = targetEl.closest('div')
+
+        comentario = document.querySelector('#comentario')
+        const anotacao = document.createElement('p')
+        anotacao.classList.add('p-comentario')
+        anotacao.innerHTML = `${comentario.value}`
+        divES.appendChild(anotacao)
+        document.querySelector('div.itens').remove()
+    })
 })
 
-function teste() {
-    document.addEventListener('click', (e) => {
-    const targetBt = e.target
-    const parentEl = targetBt.closest('button')
 /*
-    if (targetBt.classList.contains('enviou')) {
-        alert('teste')
-    }*/
-    comentario = document.querySelector('.comentario')
-    const anotacao = document.createElement('p')
-    anotacao.classList.add('p-comentario')
-    anotacao.innerHTML += `${comentario}`
-    document.querySelector('.estrofe').appendChild(anotacao)
-})}
+document.querySelector('div.estrofe').addEventListener('mouseout', (e) => {
+    document.querySelector('div.itens').remove()
+})*/
 
 
 
