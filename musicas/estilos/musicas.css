@@ -46,13 +46,14 @@ p.estrofe {
     cursor: pointer;
 }
 
-span.add {
+span.remover {
     display: block;
     background-color: black; 
     text-align: center; 
     color: white;
     padding: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 input {

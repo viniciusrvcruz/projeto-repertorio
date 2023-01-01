@@ -53,12 +53,11 @@ document.querySelector('section').addEventListener('click', (e) => {
     const parentEl = targetEl.closest('p')
     const divEl = targetEl.closest('div')
 
-
-    if(parentEl.style.color == 'blue') {
-        parentEl.style.color = 'black'
-    } else if (targetEl.classList.contains('estrofe')) {
+    if (targetEl.classList.contains('estrofe')) {
         divEl.classList.add('clicou')
-        parentEl.style.color = 'blue'   
+        if(document.querySelector('div.itens')) {
+            document.querySelector('div.itens').remove()
+        }
     }
 
 
@@ -67,8 +66,7 @@ document.querySelector('section').addEventListener('click', (e) => {
         const item = document.createElement('div')
         item.classList.add('itens')
         item.innerHTML = `
-        <span class="material-symbols-outlined add">
-        library_add
+        <span class="material-symbols-outlined remover">close
         </span>
         <input type="text" name="comentario" id="comentario">
         <button class="btn">Enviar</button>
@@ -77,20 +75,53 @@ document.querySelector('section').addEventListener('click', (e) => {
     const buttonEnviar = document.querySelector('.btn')
     buttonEnviar.classList.add('enviou')
     divEl.classList.toggle('clicou')
-    }
+    comentario = document.querySelector('#comentario')
+    comentario.focus()
 
-    document.querySelector('.enviou').addEventListener('click', (e) => {
-        const targetBt = e.target
+    document.querySelector('.remover').addEventListener('click', (a) => {
+        document.querySelector('div.itens').remove()
+    })
+
+    document.querySelector('div.itens').addEventListener('keypress', function(b) {
+
+        if(b.key === "Enter") {
+        const targetBt = b.target
         const parentEl = targetBt.closest('button')
         const divES = targetEl.closest('div')
 
-        comentario = document.querySelector('#comentario')
-        const anotacao = document.createElement('p')
-        anotacao.classList.add('p-comentario')
-        anotacao.innerHTML = `${comentario.value}`
-        divES.appendChild(anotacao)
-        document.querySelector('div.itens').remove()
+        const comentarioValue = comentario.value
+        if(comentarioValue)
+        {
+            const anotacao = document.createElement('p')
+            anotacao.classList.add('p-comentario')
+            anotacao.innerText = `${comentario.value}`
+            divES.appendChild(anotacao)
+            comentario.value = ''
+            comentario.focus()
+        }
+        
+        }
     })
+
+    document.querySelector('.enviou').addEventListener('click', (a) => {
+        const targetBt = a.target
+        const parentEl = targetBt.closest('button')
+        const divES = targetEl.closest('div')
+
+        const comentarioValue = comentario.value
+        if(comentarioValue)
+        {
+            const anotacao = document.createElement('p')
+            anotacao.classList.add('p-comentario')
+            anotacao.innerText = `${comentario.value}`
+            divES.appendChild(anotacao)
+            comentario.value = ''
+            comentario.focus()
+        }
+    })
+    }
+
+    
 })
 
 /*
