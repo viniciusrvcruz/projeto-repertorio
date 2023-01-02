@@ -85,25 +85,17 @@ document.querySelector('section').addEventListener('click', (e) => {
     document.querySelector('div.itens').addEventListener('keypress', function(b) {
 
         if(b.key === "Enter") {
-        const targetBt = b.target
-        const parentEl = targetBt.closest('button')
-        const divES = targetEl.closest('div')
-
-        const comentarioValue = comentario.value
-        if(comentarioValue)
-        {
-            const anotacao = document.createElement('p')
-            anotacao.classList.add('p-comentario')
-            anotacao.innerText = `${comentario.value}`
-            divES.appendChild(anotacao)
-            comentario.value = ''
-            comentario.focus()
+            clickButton(b)
         }
         
-        }
     })
 
     document.querySelector('.enviou').addEventListener('click', (a) => {
+        clickButton(a)
+    })
+    }
+
+    function clickButton(a) {
         const targetBt = a.target
         const parentEl = targetBt.closest('button')
         const divES = targetEl.closest('div')
@@ -118,11 +110,11 @@ document.querySelector('section').addEventListener('click', (e) => {
             comentario.value = ''
             comentario.focus()
         }
-    })
-    }
-
+}
     
 })
+
+
 
 /*
 document.querySelector('div.estrofe').addEventListener('mouseout', (e) => {
