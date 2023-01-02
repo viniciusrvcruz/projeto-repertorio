@@ -18,6 +18,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+div#cronograma1, div#cronograma2 {
+    display: none;
+}
+
 section {
     margin-top: 20px;
     width: 229px;
