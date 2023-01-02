@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
+:root {
+    --cor01: #41A0DB;
+    --cor02: #87BFE1;
+    --cor03: #143244;
+    --cor04: #D9BBA0;
+}
+
+body {
+    background-color: var(--cor01);
+}
+
+div {
+    margin-top: 20px;
+    width: 229px;
+    padding: 25px;
+    background-color: var(--cor04);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    box-shadow: 0px 7px 16px black;
+}
+
+div p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px 0px 3px 0px;
+}
+
+table {
+    margin: auto;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: var(--cor04);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+    border: 1px solid black;
+    padding: 10px;   
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px;   
+}
+
+a img {
+    border-radius: 50%;
+    width: 70px;
+    transform: translate(70%, 100%);
+    position: fixed;
+}
