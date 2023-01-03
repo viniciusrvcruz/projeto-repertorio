@@ -47,7 +47,7 @@ const atualizarTela = () => {
 }
 */
 
-document.querySelector('section').addEventListener('click', (e) => {
+document.querySelector('div#letra').addEventListener('click', (e) => {
 
     const targetEl = e.target
     const parentEl = targetEl.closest('p')
