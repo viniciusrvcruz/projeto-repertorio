@@ -1,4 +1,3 @@
-
 const getBanco = () => JSON.parse(localStorage.getItem('comentario')) ?? []
 const setBanco = (banco) => localStorage.setItem('comentario', JSON.stringify(banco))
 
