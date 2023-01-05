@@ -1,3 +1,42 @@
+
+const getBanco = () => JSON.parse(localStorage.getItem('comentario')) ?? []
+const setBanco = (banco) => localStorage.setItem('comentario', JSON.stringify(banco))
+
+function criarItem(codigo, comentario) {
+    const anotacao = document.createElement('p')
+            anotacao.classList.add('p-comentario')
+            anotacao.innerText = `${comentario}`
+            document.querySelector(`#${codigo}`).appendChild(anotacao)
+}
+
+const limparComentario = () => {
+    while(document.querySelector('p.p-comentario')) {
+        document.querySelector('p.p-comentario').remove()
+    }
+}
+
+const atualizarTela = () => {
+    limparComentario() 
+    const banco = getBanco()
+    banco.forEach (item => criarItem(item.codigo,item.comentario))
+    if(localStorage.getItem('comentario')) {
+        const botaoRemover = document.querySelector('button#remover-comentarios')
+        botaoRemover.style.display = 'block'
+    } else {
+        document.querySelector('button#remover-comentarios').style.display = 'none'
+    }
+}
+
+ 
+    document.querySelector('button#remover-comentarios').addEventListener('click', () => {
+        if (document.querySelector('button#remover-comentarios').style.display == 'block') {
+        localStorage.removeItem("comentario");}
+        atualizarTela()
+    })
+
+
+atualizarTela()
+
 document.querySelector('div#letra').addEventListener('click', (e) => {
 
     const targetEl = e.target
@@ -50,18 +89,20 @@ document.querySelector('div#letra').addEventListener('click', (e) => {
         const targetBt = a.target
         const parentEl = targetBt.closest('button')
         const divES = targetEl.closest('div')
+        const divId = divES.id
 
         const comentarioValue = comentario.value
         if(comentarioValue)
         {
-            const anotacao = document.createElement('p')
-            anotacao.classList.add('p-comentario')
-            anotacao.innerText = `${comentario.value}`
-            divES.appendChild(anotacao)
+            const banco = getBanco()
+            banco.push({'codigo': `${divId}`, 'comentario': `${comentarioValue}`})
+            setBanco(banco)
+            atualizarTela()
             comentario.value = ''
             comentario.focus()
+            console.log(banco)
         }
-}
+    }
     
 })
 

@@ -67,7 +67,21 @@ input {
     outline: none;
 }
 
-button {
+button#remover-comentarios {
+    display: none;
+    width: 100%;
+    font-size: .9em;
+    font-weight: bold;
+    padding: 7px;
+    color: rgb(255, 230, 230);
+    background-color: darkred;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.527);
+    cursor: pointer;
+}
+
+button.btn {
     display: inline-block;
     width: 25%;
     height: 25px;
