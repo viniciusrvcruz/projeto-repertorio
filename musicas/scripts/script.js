@@ -2,10 +2,13 @@ const getBanco = () => JSON.parse(localStorage.getItem('comentario')) ?? []
 const setBanco = (banco) => localStorage.setItem('comentario', JSON.stringify(banco))
 
 function criarItem(codigo, comentario) {
-    const anotacao = document.createElement('p')
-            anotacao.classList.add('p-comentario')
-            anotacao.innerText = `${comentario}`
-            document.querySelector(`#${codigo}`).appendChild(anotacao)
+    if(document.querySelector(`#${codigo}`)) {
+        const anotacao = document.createElement('p')
+        
+        anotacao.classList.add('p-comentario')
+        anotacao.innerText = `${comentario}`
+        document.querySelector(`#${codigo}`).appendChild(anotacao)
+    }
 }
 
 const limparComentario = () => {
