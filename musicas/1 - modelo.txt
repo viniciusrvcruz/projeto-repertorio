@@ -65,6 +65,18 @@
             <div class="estrofe" id="n16">
                 <p class="estrofe"></p>
             </div>
+            <div class="estrofe" id="n17">
+                <p class="estrofe"></p>
+            </div>
+            <div class="estrofe" id="n18">
+                <p class="estrofe"></p>
+            </div>
+            <div class="estrofe" id="n19">
+                <p class="estrofe"></p>
+            </div>
+            <div class="estrofe" id="n20">
+                <p class="estrofe"></p>
+            </div>
         </div>
     </section>
     
