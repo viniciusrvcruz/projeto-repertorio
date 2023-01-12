@@ -24,7 +24,7 @@ div#cronograma1, div#cronograma2 {
 
 section {
     margin-top: 20px;
-    width: 229px;
+    width: 282px;
     padding: 22px;
     background-color: var(--cor04);
     position: relative;
@@ -45,10 +45,15 @@ h2 {
     font-size: 1.4em;
 }
 
+h2#pausa {
+    text-align: center;
+}
+
 label {
     display: inline;
     padding-left: 5px;
     font-size: 1.1em;
+    user-select: none;
     transform: translate(0px, -2px);
 }
 
